@@ -5,11 +5,14 @@ import java.util.Collections;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
@@ -44,6 +47,39 @@ public class Wardrobe extends Application {
 			// create GUI elements and place on screen
 
 			primaryStage.show();
+			
+//			// add a control
+//			Button bt1 = new Button("click me");
+//			Button bt2 = new Button("click me");
+//			Button bt3 = new Button("click me");
+//			Button bt4 = new Button("click me");
+//			Button bt5 = new Button("click me");
+//			Button bt6 = new Button("click me");
+//			// define the layout
+//			FlowPane root = new FlowPane();
+//			// add button to the layout
+//			root.getChildren().add(bt1);
+//			root.getChildren().add(bt2);
+//			root.getChildren().add(bt3);
+//			root.getChildren().add(bt4);
+//			root.getChildren().add(bt5);
+//			root.getChildren().add(bt6);
+//			// add layout to the a scene
+//			Scene scene1 = new Scene(root);
+//			// add scene to a stage
+//			primaryStage.setScene(scene1);
+//			// modify stage dimensions
+//			primaryStage.setHeight(500);
+//			primaryStage.setWidth(500);
+//			primaryStage.setMaxHeight(600);
+//			primaryStage.setMaxWidth(1000);
+//			primaryStage.setMinHeight(150);
+//			// modify other stage attributes
+//			primaryStage.setTitle("Hahahaha YES");
+//			primaryStage.setFullScreen(false);
+//			// show the stage
+//			primaryStage.show();
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
