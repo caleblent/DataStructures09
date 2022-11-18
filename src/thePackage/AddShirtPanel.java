@@ -11,10 +11,10 @@ public class AddShirtPanel extends AddApparelPanel {
 	protected TextField shirtTextTF;
 	private Button addShirtB;
 	
-	public AddShirtPanel(Shirt shirt) {
-		super(shirt);
-		sizeTF = new TextField(shirt.getSizeString());
-		shirtTextTF = new TextField(shirt.getShirtText());
+	public AddShirtPanel() {
+		super();
+		sizeTF = new TextField();
+		shirtTextTF = new TextField();
 		
 		FlowPane temp = new FlowPane();
 		temp.getChildren().add(new Label("Shirt Size:"));

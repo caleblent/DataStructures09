@@ -16,12 +16,11 @@ public class AddApparelPanel extends VBox {
 	protected ComboBox<Condition> conditionCB;
 	protected TextField priceTF;
 	
-	public AddApparelPanel(Apparel apparel) {
+	public AddApparelPanel() {
 		super();
-		colorTF = new TextField(apparel.getColor());
-		priceTF = new TextField(Double.toString(apparel.getPrice()));
+		colorTF = new TextField();
+		priceTF = new TextField();
 		conditionCB = new ComboBox<Condition>();
-		conditionCB.getItems().addAll(Apparel.Condition.values());
 		
 		FlowPane temp = new FlowPane();
 		temp.getChildren().add(new Label("Apparel Color:"));

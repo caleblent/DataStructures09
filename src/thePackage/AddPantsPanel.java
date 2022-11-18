@@ -10,10 +10,10 @@ public class AddPantsPanel extends AddApparelPanel {
 	protected TextField inseamTF;
 	private Button addPantsB;
 	
-	public AddPantsPanel(Pants pants) {
-		super(pants);
-		waistTF = new TextField(Integer.toString(pants.getWaist()));
-		inseamTF = new TextField(Integer.toString(pants.getInseam()));
+	public AddPantsPanel() {
+		super();
+		waistTF = new TextField();
+		inseamTF = new TextField();
 		
 		FlowPane temp = new FlowPane();
 		temp.getChildren().add(new Label("Waist Size:"));
