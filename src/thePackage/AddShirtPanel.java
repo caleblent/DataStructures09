@@ -4,13 +4,16 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
+import thePackage.Apparel.Condition;
+import thePackage.Shirt.Size;
 
 public class AddShirtPanel extends AddApparelPanel implements EventHandler<ActionEvent> {
 	
-	protected TextField sizeTF;       // GUI element
+	protected ComboBox sizeCB;        // GUI element
 	protected TextField shirtTextTF;  // GUI element
 	private Button addShirtB;         // GUI element
 	
@@ -20,24 +23,28 @@ public class AddShirtPanel extends AddApparelPanel implements EventHandler<Actio
 		super();
 		this.wdrb = w;
 		
-		sizeTF = new TextField();
-		sizeTF.setPrefColumnCount(2);
+		
+		
+		sizeCB = new ComboBox<Size>();
+		sizeCB.getItems().addAll(Shirt.Size.values());
 		
 		shirtTextTF = new TextField();
-		shirtTextTF.setPrefColumnCount(20);
+		shirtTextTF.setPrefColumnCount(2);
 		
 		addShirtB = new Button("Add Shirt");
 		addShirtB.setOnAction(this);
 		
-		// put these items into a pane
+		// put these items into a pane, then add to the superclass
 		FlowPane temp = new FlowPane();
 		temp.getChildren().add(new Label("Shirt Size:"));
-		temp.getChildren().add(sizeTF);
+		temp.getChildren().add(sizeCB);
+		getChildren().add(temp);
+		
+		temp = new FlowPane();
 		temp.getChildren().add(new Label("Shirt Text:"));
 		temp.getChildren().add(shirtTextTF);
-		
-		// now add the pane into the superclass
 		getChildren().add(temp);
+		
 		getChildren().add(addShirtB);
 	}
 	
@@ -48,7 +55,7 @@ public class AddShirtPanel extends AddApparelPanel implements EventHandler<Actio
 	@Override
 	protected void clear() {
 		super.clear(); // clear out the parent's fields ("Apparel"), too
-		sizeTF.setText("");
+		sizeCB.getSelectionModel().select(0);
 		shirtTextTF.setText("");
 	}
 
@@ -60,7 +67,8 @@ public class AddShirtPanel extends AddApparelPanel implements EventHandler<Actio
 					colorTF.getText(),                        // color
 					Double.parseDouble(priceTF.getText()),    // price
 					conditionCB.getValue(),                   // condition
-					sizeTF.getText(),                         // size
+					// TODO: how to get the ComboBox value for the size?
+					Size.L,                                   // size
 					shirtTextTF.getText()                     // shirt text
 				);
 				wdrb.addApparel(a);
