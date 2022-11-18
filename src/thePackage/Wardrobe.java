@@ -79,7 +79,11 @@ public class Wardrobe extends Application {
 	        // add it as one of the tabs
 	        addPane.getTabs().add(new Tab("Add Pants", aPantsPanel));
 	        
-	        // TODO: add a tab for a ShirtPanel
+	        // create a panel for adding shirts
+	        AddShirtPanel aShirtPanel = new AddShirtPanel(this);
+	        aShirtPanel.setPrefSize(625, 175);
+	        // add it as one of the tabs
+	        addPane.getTabs().add(new Tab("Add Shirts", aShirtPanel));
 			
 			primaryStage.show();
 			

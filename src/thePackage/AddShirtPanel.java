@@ -24,7 +24,7 @@ public class AddShirtPanel extends AddApparelPanel implements EventHandler<Actio
 		sizeTF.setPrefColumnCount(2);
 		
 		shirtTextTF = new TextField();
-		shirtTextTF.setPrefColumnCount(2);
+		shirtTextTF.setPrefColumnCount(20);
 		
 		addShirtB = new Button("Add Shirt");
 		addShirtB.setOnAction(this);
