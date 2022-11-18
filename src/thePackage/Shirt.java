@@ -113,7 +113,10 @@ public class Shirt extends Apparel {
 	 * @param shirtText
 	 */
 	public void setShirtText(String shirtText) {
-		this.shirtText = shirtText;
+		if (shirtText == null)
+			this.shirtText = "";
+		else
+			this.shirtText = shirtText;
 	}
 
 	/**

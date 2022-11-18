@@ -23,10 +23,10 @@ import javafx.scene.layout.VBox;
  * Some elements are already written for you.
  * 
  * Some elements we will write together, 
- * including AddApparel_Panel and AddPants_Panel classes 
+ * including AddApparelPanel and AddPantsPanel classes 
  * (see code-along videos)
  * 
- * You will need to write the AddShirt_Panel class as homework.
+ * You will need to write the AddShirtPanel class as homework.
  * 
  * @author Gossett, revised
  * @version 21.4.c
