@@ -28,12 +28,12 @@ public class AddApparelPanel extends VBox {
 		conditionCB.getItems().addAll(Apparel.Condition.values());
 		
 		FlowPane temp = new FlowPane();
-		temp.getChildren().add(new Label("Apparel Color:"));
+		temp.getChildren().add(new Label("Apparel Color: "));
 		temp.getChildren().add(colorTF);
 		getChildren().add(temp);
 		
 		temp = new FlowPane();
-		temp.getChildren().add(new Label("Apparel Condition:"));
+		temp.getChildren().add(new Label("Apparel Condition: "));
 		temp.getChildren().add(conditionCB);
 		getChildren().add(temp);
 		

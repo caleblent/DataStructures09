@@ -13,7 +13,7 @@ import thePackage.Shirt.Size;
 
 public class AddShirtPanel extends AddApparelPanel implements EventHandler<ActionEvent> {
 	
-	protected ComboBox sizeCB;        // GUI element
+	protected ComboBox<Size> sizeCB;        // GUI element
 	protected TextField shirtTextTF;  // GUI element
 	private Button addShirtB;         // GUI element
 	
@@ -29,19 +29,16 @@ public class AddShirtPanel extends AddApparelPanel implements EventHandler<Actio
 		sizeCB.getItems().addAll(Shirt.Size.values());
 		
 		shirtTextTF = new TextField();
-		shirtTextTF.setPrefColumnCount(2);
+		shirtTextTF.setPrefColumnCount(20);
 		
 		addShirtB = new Button("Add Shirt");
 		addShirtB.setOnAction(this);
 		
 		// put these items into a pane, then add to the superclass
 		FlowPane temp = new FlowPane();
-		temp.getChildren().add(new Label("Shirt Size:"));
+		temp.getChildren().add(new Label("Shirt Size: "));
 		temp.getChildren().add(sizeCB);
-		getChildren().add(temp);
-		
-		temp = new FlowPane();
-		temp.getChildren().add(new Label("Shirt Text:"));
+		temp.getChildren().add(new Label("Shirt Text: "));
 		temp.getChildren().add(shirtTextTF);
 		getChildren().add(temp);
 		
@@ -67,8 +64,7 @@ public class AddShirtPanel extends AddApparelPanel implements EventHandler<Actio
 					colorTF.getText(),                        // color
 					Double.parseDouble(priceTF.getText()),    // price
 					conditionCB.getValue(),                   // condition
-					// TODO: how to get the ComboBox value for the size?
-					Size.L,                                   // size
+					sizeCB.getValue(),                        // size
 					shirtTextTF.getText()                     // shirt text
 				);
 				wdrb.addApparel(a);
