@@ -25,6 +25,11 @@ public class Shirt extends Apparel {
 		this.setSize(size);
 		this.setShirtText(color);
 	}
+	public Shirt(String color, double price, Condition condition, String size) {
+		super(color, price, condition);
+		this.setSize(size);
+		this.setShirtText(color);
+	}
 
 	/**
 	 * Constructor function for shirt WITH shirt text
@@ -36,6 +41,11 @@ public class Shirt extends Apparel {
 	 * @param shirtText
 	 */
 	public Shirt(String color, double price, Condition condition, Size size, String shirtText) {
+		super(color, price, condition);
+		this.setSize(size);
+		this.setShirtText(shirtText);
+	}
+	public Shirt(String color, double price, Condition condition, String size, String shirtText) {
 		super(color, price, condition);
 		this.setSize(size);
 		this.setShirtText(shirtText);
@@ -79,6 +89,18 @@ public class Shirt extends Apparel {
 		for (int i = 0; i < this.sizes.length; i++) {
 			if (sizes[i].toString().equals(size.toString())) {
 				this.size = size;
+				return;
+			}
+		}
+		throw new IllegalArgumentException("Size inputted does not exist");
+	}
+	
+	public void setSize(String size) throws IllegalArgumentException {
+		if (size == null)
+			throw new IllegalArgumentException("Size cannot be null");
+		for (int i = 0; i < this.sizes.length; i++) {
+			if (sizes[i].toString().equals(size.toString())) {
+				this.size = sizes[i];
 				return;
 			}
 		}

@@ -16,11 +16,16 @@ public class AddApparelPanel extends VBox {
 	protected ComboBox<Condition> conditionCB;
 	protected TextField priceTF;
 	
+	/**
+	 * Default constructor.
+	 * Create text fields and combobox in a vertical layout
+	 */
 	public AddApparelPanel() {
 		super();
 		colorTF = new TextField();
 		priceTF = new TextField();
 		conditionCB = new ComboBox<Condition>();
+		conditionCB.getItems().addAll(Apparel.Condition.values());
 		
 		FlowPane temp = new FlowPane();
 		temp.getChildren().add(new Label("Apparel Color:"));
@@ -38,6 +43,9 @@ public class AddApparelPanel extends VBox {
 		getChildren().add(temp);
 	}
 	
+	/**
+	 * clear - Reset all of the user entry fields
+	 */
 	protected void clear() {
 		colorTF.setText("");
 		priceTF.setText("");
